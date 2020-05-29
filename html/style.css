@@ -1,0 +1,23 @@
+html,body{
+    margin: 0
+}
+
+#modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 250px;
+    border: 1px solid;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
