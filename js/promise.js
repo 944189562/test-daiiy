@@ -1,3 +1,4 @@
+// promise 练习
 function loadScript(src) {
   return new Promise((resolve, reject) => {
     let script = document.createElement("script");
