@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/learnReact/lesson1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/learnReact/my-first" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/learnReact/react-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/learnReact/react-first" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/learnReact/test" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/typescript-tea" vcs="Git" />
   </component>
 </project>

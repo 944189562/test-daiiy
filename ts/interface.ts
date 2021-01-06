@@ -8,3 +8,4 @@ function printLabel(labelledObj: LabelledValue){
 
 let myObj = {size: 10, label: 'size 10 Object'}
 printLabel(myObj)
+

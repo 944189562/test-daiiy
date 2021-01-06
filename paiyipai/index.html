@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    li {
+      list-style: none;
+    }
+
+    #wrap_chat {
+      border: 1px solid black;
+      width: 500px;
+      text-align: center;
+    }
+
+    #chat_page {
+      position: relative;
+    }
+
+    #chat_page1 {
+      position: relative;
+    }
+
+    .tip {
+      width: 300px;
+      height: 100px;
+      border: 1px solid #000;
+      border-radius: 8px;
+      background-color: #0091EA;
+      position: relative;
+      margin-left: 70px;
+      margin-top: 20px;
+    }
+
+    .tip .inner {
+      width: 10px;
+      height: 10px;
+      border: 1px solid red;
+      position: relative;
+      top: 31px;
+      left: -7px;
+      transform: rotate(45deg);
+      border-top: 0px;
+      border-right: 0px;
+      background-color: #0091EA;
+    }
+
+    .tip .inner1 {
+      width: 10px;
+      height: 10px;
+      border: 1px solid red;
+      position: relative;
+      top: 31px;
+      left: 295px;
+      transform: rotate(228deg);
+      border-top: 0px;
+      border-right: 0px;
+      background-color: #0091EA;
+    }
+
+    .tip:before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border: 5px solid transparent;
+      border-right-color: #ccc;
+      left: -11px;
+      top: 13px;
+    }
+
+    .tip:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border: 5px solid transparent;
+      border-right-color: #fff;
+      left: -10px;
+      top: 13px;
+    }
+
+    .xw-servicer-avantar {
+      border-radius: 5%;
+      height: 60px;
+      width: 60px;
+      float: left;
+      margin-left: -35px;
+    }
+
+    #left {
+      border-radius: 5%;
+      height: 60px;
+      width: 60px;
+      float: right;
+      margin-right: 7px;
+    }
+
+    .xw-servicer-avantar-wrap {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap_chat">
+    <ul style="list-style-type:none;">
+      <!--石璞东-->
+      <li class="xw-servicer-avantar-wrap" id="logo">
+        <div id="chat_page">
+          <div style="margin-left: -467px;font-size: 2px; color: gray;" class="say_info">石璞东</div>
+          <img src="img/2.jpg" class="xw-servicer-avantar" />
+        </div>
+        <div class="tip">
+          <div class="inner"></div>
+          <div style="margin:2px;"> 你好，我是石璞东，欢迎关注我的微信公众号hahaCoder。</div>
+        </div>
+      </li>
+      <!--郑合惠子-->
+      <li class="xw-servicer-avantar-wrap" id="logo">
+        <div id="chat_page1">
+          <div style="margin-right: -392px;font-size: 2px; color: gray;" class="say_info">郑合惠子</div>
+          <img src="img/timg.jpg" class="xw-servicer-avantar" id="left" />
+        </div>
+        <div class="tip">
+          <div class="inner1"></div>
+          <div style="margin:4px;"> 你好，我是郑合惠子。</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+    var card1 = document.getElementById("chat_page");
+    var card2 = document.getElementById("chat_page1");
+    var content = document.getElementById("wrap_chat");
+    var boy_info = document.getElementsByClassName("say_info")
+    var a = ['right', 'left'];
+    var b = 0;
+    var u;
+    //双击抖动效果的实现
+    card1.ondblclick = function () {
+      contentInfo();
+      clearInterval(u);
+      u = setInterval(function () {
+        card1.style[a[b % 2]] = (b++) % 4 < 2 ? "0px" : "4px";
+        c = b
+        console.log(a[b % 2], c % 4, c % 4 < 2)
+        if (b > 15) {
+          clearInterval(u);
+          b = 0;
+        }
+      }, 32);
+    }
+
+    card2.ondblclick = function () {
+      contentInfo1();
+      clearInterval(u);
+      u = setInterval(function () {
+        card2.style[a[b % 2]] = (b++) % 4 < 2 ? "0px" : "4px";
+        if (b > 15) {
+          clearInterval(u);
+          b = 0;
+        }
+      }, 32);
+    }
+
+    // 显示“谁”拍了拍“谁”
+    function contentInfo() {
+      const li = document.createElement("li");
+      li.innerHTML = "“" + boy_info[1].innerHTML + "”" + "拍了拍" + "”" + boy_info[0].innerHTML + "“";
+      li.style = "color:gray";
+      content.appendChild(li);
+    }
+
+    function contentInfo1() {
+      const li = document.createElement("li");
+      li.innerHTML = "“" + boy_info[0].innerHTML + "”" + "拍了拍" + "”" + boy_info[1].innerHTML + "“";
+      li.style = "color:gray";
+      content.appendChild(li);
+    }
+  </script>
+</body>
+
+</html>
